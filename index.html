@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+  <head>
+      <title>Compasso Frontend</title>
+      <meta charset="utf-8">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+      <link rel="stylesheet" href="assets/styles/main.css">
+      <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+      <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  </head>
+  <body>
+    <header class="header">
+      <img class="header-logo" src="assets/img/header-logo.png">
+      <h2>&nbsp GitHub API</h2>
+    </header>
+    <div class="container" id="app">
+      <div class="row">
+        <section v-show="!showcontent" class="search">
+          <div class="pull-s5">
+            <img class="responsive-img" src="assets/img/gitsearch.png">
+          </div>
+          <div class="search-box">
+            <input class="search-input" v-model="user" placeholder="digite o usuário">
+          </div>
+        </section>
+      </div>
+
+      <div class="row">
+        <section class="response">
+          <ul class="collection">
+              <li class="collection-item avatar">
+                <template v-if="user">
+                  <img v-bind:src="response.avatar_url" alt="" class="circle">
+                  <span class="title">{{response.name}} ({{response.login}})</span>
+                  <a class="waves-effect waves-light blue btn-small btnRight"  name="seemore" v-on:click="seemore" v-show="!showcontent" :disabled='isDisabled'>
+                    <i class="material-icons left">add_circle_outline</i>Ver mais
+                  </a>
+                  <a class="waves-effect waves-light btn-small btnRight" name="starred" v-show="showcontent" v-on:click="starred">
+                    <i class="material-icons left">star</i>Starred
+                  </a>
+                  <a class="waves-effect waves-light btn-small btnRight" name="repos" v-show="showcontent" v-on:click="repos">
+                    <i class="material-icons left">folder</i>Repos
+                  </a>
+                  <p>{{response.bio}}<br>
+                     {{response.location}}
+                     <hr>
+                     Seguidores: {{response.followers}}
+                  </p>
+                </template>
+              </li>
+            </ul>
+            <div class="result">
+              <div class="resultContent collection row">
+                <div class="col s6 marginTop05">
+                  <h1 class="subtitle">User Repositories</h1>
+                  <ul class="marginTop20" id="repos-result">
+                    <li class="marginTop10" v-for="repo in responserepos">{{repo.name}}</li>
+                  </ul>
+                </div>
+                <div class="col s6 marginTop05">
+                  <h1 class="subtitle">Starred Repositories</h1>
+                  <ul class="marginTop20" id="starred-result">
+                    <li class="marginTop10" v-for="starred in responsestarred">{{starred.name}}</li>
+                  </ul>
+                </div>
+              </div>
+              <div class="row">
+                <a class="waves-effect blue waves-light btn-small btnRight" name="starred" v-on:click="returnhome">
+                  <i class="material-icons left">reply</i>Voltar
+                </a>
+              </div>
+            </div>          
+        </section>
+      </div>
+    </div>
+    <footer class="footer">
+      <div class="footer-copyright">
+        <p>&nbsp
+        © 2019 Raquel Calado
+        </p>
+      </div>
+    </footer>
+  <script src="https://unpkg.com/vue/dist/vue.js"></script>
+  <script src="assets/js/app.js"></script>
+  </body>
+</html>
