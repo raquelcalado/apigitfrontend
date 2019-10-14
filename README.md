@@ -1,7 +1,6 @@
 # compassofrontend
 
 <h1>Projeto Desafio Front-End Compasso</h1>
-<hr>
 
 Aplicação que utiliza a API do GITHUB https://developer.github.com/v3/ 
 
@@ -13,7 +12,6 @@ Para isso, foram consumidos os seguintes endpoints:
 </ul>
 
 <h2>COMPONENTES</h2>
-<hr>
 A aplicação possui os componentes principais:
 
 <ul>
@@ -30,6 +28,6 @@ Para execução do projeto, foram utilizados:
 <li>Framework CSS Materialize</li>
 <li>Frameworks JS Vuejs</li>
 </ul>
-
+<hr>
 
 <b>Para executar o projeto, basta abrir o arquivo "index.html" em qualquer navegador de internet.</b>
