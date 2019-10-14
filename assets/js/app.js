@@ -17,7 +17,7 @@ var app = new Vue({
   },
 
   methods: {
-    fetchData: function () {
+   fetchData: function () {
       let self = this;
       fetch(apiURL + self.user)
         .then(response => response.json())
@@ -48,9 +48,6 @@ var app = new Vue({
     },
     returnhome: function(event){
       location.reload();
-    },
-    isDisabled: function(){
-      return !response;
     }
   }
 });

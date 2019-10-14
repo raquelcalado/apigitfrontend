@@ -33,7 +33,7 @@
                 <template v-if="user">
                   <img v-bind:src="response.avatar_url" alt="" class="circle">
                   <span class="title">{{response.name}} ({{response.login}})</span>
-                  <a class="waves-effect waves-light blue btn-small btnRight"  name="seemore" v-on:click="seemore" v-show="!showcontent" :disabled='isDisabled'>
+                  <a class="waves-effect waves-light blue btn-small btnRight"  name="seemore" v-on:click="seemore" v-show="!showcontent">
                     <i class="material-icons left">add_circle_outline</i>Ver mais
                   </a>
                   <a class="waves-effect waves-light btn-small btnRight" name="starred" v-show="showcontent" v-on:click="starred">
