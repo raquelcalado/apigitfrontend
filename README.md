@@ -1,6 +1,6 @@
-# compassofrontend
+# frontend
 
-<h1>Projeto Desafio Front-End Compasso</h1>
+<h1>Projeto para consumir API do GITHUB</h1>
 
 Aplicação que utiliza a API do GITHUB https://developer.github.com/v3/ 
 
